@@ -51,8 +51,6 @@ class PlayableScenario
   end
 
   def render(maybe_closest_gravity)
-    @active_player = 0
-    index = 0
 
     gravity = maybe_closest_gravity
 
@@ -75,14 +73,12 @@ class PlayableScenario
 
         player.affect(force_x*10,force_y*10)
       end
-      index += 1
     end
   end
 
   def derender()
     @players.each do |player|
       player.derender()
-
     end
   end
 
@@ -111,13 +107,17 @@ class PlayableScenario
       dragged_y = @base_drag_y - event.y
 
       if dragged_x != 0 && dragged_y != 0
-        @players[@active_player].move(dragged_x / 10, dragged_y / 10)
+
+        puts @active_player
 
         @players[@active_player].set_color('red')
 
-        puts @players.length
+        puts "before #{@active_player}"
+
+        @players[@active_player].move(dragged_x / 10, dragged_y / 10)
 
         @active_player = change_index(@active_player, @players.length - 1)
+        puts "after #{@active_player}\n---"
         @players[@active_player].set_color('blue')
 
         @text.text = "#{@active_player+1} player turn"

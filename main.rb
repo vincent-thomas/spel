@@ -29,7 +29,6 @@ scenario = PlayableScenario.new(number_players: 4)
 index = 0
 
 has_won = false
-
 has_won_rendered = false
 
 update do
