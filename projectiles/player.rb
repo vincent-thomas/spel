@@ -8,7 +8,7 @@ class Player
     @x = x
     @delta_x = 0
     @delta_y = 0
-    @friction = 0.9
+    @friction = friction
     @inner_circle = Circle.new(
       x: @x,
       y: @y,
@@ -56,3 +56,4 @@ class Player
     @inner_circle.remove()
   end
 end
+
