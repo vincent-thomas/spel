@@ -1,6 +1,6 @@
 require "ruby2d"
 
-
+# HasWon klassen är en klass som representerar en scen där spelaren har vunnit.
 class HasWon
 
   def initialize
