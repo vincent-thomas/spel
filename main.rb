@@ -26,8 +26,6 @@ gravity = NewtonGravity.new(x: 200, y: 200)
 
 scenario = PlayableScenario.new(number_players: 4)
 
-index = 0
-
 has_won = false
 has_won_rendered = false
 
@@ -51,9 +49,6 @@ update do
 #    player.render()
 #  end
 end
-
-base_drag_x = nil
-base_drag_y = nil
 
 on :mouse do |event|
   if !has_won
